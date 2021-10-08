@@ -1,9 +1,9 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors')
+require('dotenv').config()
 
 const app = express();
-const router = express.Router();
 
 // noinspection JSCheckFunctionSignatures
 app.use(cors({ origin: process.env.ORIGIN_URL }))
@@ -12,7 +12,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(router.get('/', (req, res) => res.json({ status: 'ok' })));
+app.use('/api', require('./routes'));
 
 module.exports = app;
 
