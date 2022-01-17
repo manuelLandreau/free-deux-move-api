@@ -1,4 +1,4 @@
-# Test technique Free2move
+# Test technique
 ## API (Express js)
 
 **Temps: 2h15 (+ front app 2h15)**
